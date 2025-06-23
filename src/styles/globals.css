@@ -1,0 +1,364 @@
+/* Retro Grid Background */
+.retro-grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Neon Logo */
+.neon-logo {
+  color: #00F5FF;
+  text-shadow: 
+    0 0 5px #00F5FF,
+    0 0 10px #00F5FF,
+    0 0 15px #00F5FF,
+    0 0 20px #00F5FF,
+    0 0 30px #00F5FF,
+    0 0 40px #00F5FF;
+  animation: neon-flicker 2s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px #00F5FF,
+      0 0 10px #00F5FF,
+      0 0 15px #00F5FF,
+      0 0 20px #00F5FF,
+      0 0 30px #00F5FF,
+      0 0 40px #00F5FF;
+  }
+  50% {
+    text-shadow: 
+      0 0 2px #00F5FF,
+      0 0 5px #00F5FF,
+      0 0 8px #00F5FF,
+      0 0 12px #00F5FF,
+      0 0 18px #00F5FF,
+      0 0 25px #00F5FF;
+  }
+}
+
+.neon-underline {
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #FF1B8D, #00F5FF, #8B5CF6, transparent);
+  animation: neon-flow 3s ease-in-out infinite;
+}
+
+@keyframes neon-flow {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.5); }
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, #FF1B8D, #00F5FF, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(90deg); }
+}
+
+/* Neon Text Glow */
+.neon-text-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+/* Navigation Button */
+.nav-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 27, 141, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.nav-button:hover::before {
+  left: 100%;
+}
+
+/* Neon Card */
+.neon-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid rgba(0, 245, 255, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 20px rgba(0, 245, 255, 0.1),
+    inset 0 0 20px rgba(255, 27, 141, 0.05);
+  transition: all 0.3s ease;
+}
+
+.neon-card:hover {
+  border-color: rgba(0, 245, 255, 0.6);
+  box-shadow: 
+    0 0 30px rgba(0, 245, 255, 0.2),
+    inset 0 0 30px rgba(255, 27, 141, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Feature Card */
+.feature-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.feature-card:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(45deg, #FF1B8D, #8B5CF6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* CTA Button */
+.cta-button {
+  background: linear-gradient(45deg, #FF1B8D, #8B5CF6);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 27, 141, 0.4);
+}
+
+/* Game Button */
+.game-button {
+  background: rgba(0, 245, 255, 0.1);
+  border: 2px solid #00F5FF;
+  color: #00F5FF;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.game-button:hover {
+  background: rgba(0, 245, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Game Container */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 245, 255, 0.3);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.game-canvas {
+  border: 1px solid rgba(255, 27, 141, 0.5);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Leaderboard Entry */
+.leaderboard-entry {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.leaderboard-entry:hover {
+  border-color: rgba(0, 245, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.leaderboard-entry.top-three {
+  border-color: rgba(255, 215, 0, 0.5);
+  background: rgba(255, 215, 0, 0.05);
+}
+
+/* Power-up Card */
+.power-up-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.power-up-card:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
+}
+
+/* Difficulty Cards */
+.difficulty-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.difficulty-card.easy {
+  border-left-color: #10B981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.difficulty-card.medium {
+  border-left-color: #F59E0B;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.difficulty-card.hard {
+  border-left-color: #EF4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.difficulty-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Icons */
+.social-icon {
+  color: #00F5FF;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.social-icon:hover {
+  color: #FF1B8D;
+  border-color: rgba(255, 27, 141, 0.3);
+  background: rgba(255, 27, 141, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .neon-logo {
+    font-size: 3rem;
+  }
+  
+  .neon-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  .game-canvas {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-logo {
+    font-size: 2.5rem;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .nav-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .game-canvas {
+    max-width: 300px;
+  }
+}
+
+/* Animation Performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.neon-card, .feature-card, .leaderboard-entry, .power-up-card, .difficulty-card {
+  will-change: transform;
+}
